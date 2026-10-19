@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Food Ordering Portal</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #fff7ed;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .container {
+    max-width: 1050px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  h1 {
+    color: #c2410c;
+    text-align: center;
+  }
+
+  h2 {
+    color: #c2410c;
+    border-bottom: 2px solid #c2410c;
+    padding-bottom: 5px;
+    margin-top: 30px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .card {
+    background: #fff3e6;
+    border-left: 5px solid #c2410c;
+    padding: 14px 18px;
+    border-radius: 6px;
+  }
+
+  .card h3 {
+    margin: 0 0 6px;
+    color: #c2410c;
+  }
+
+  .card p {
+    margin: 4px 0;
+    font-size: 0.93em;
+    color: #333;
+  }
+
+  .price {
+    font-weight: bold;
+    color: #15803d;
+  }
+
+  .promo {
+    background: #dcfce7;
+    border-left: 5px solid #15803d;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin: 10px 0;
+  }
+
+  button {
+    background: #c2410c;
+    color: white;
+    border: none;
+    padding: 9px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #9a3412;
+  }
+
+  .status {
+    color: #15803d;
+    font-weight: bold;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #555;
+  }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <h1>QuickBite - Online Food Ordering</h1>
+
+  <p style="text-align:center;">
+    Delicious food delivered to your doorstep!
+  </p>
+
+  <h2>Featured Restaurants</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Spice Garden</h3>
+      <p>Cuisine: Indian</p>
+      <p>Rating: 4.5/5</p>
+      <p>Delivery: 30 minutes</p>
+    </div>
+
+    <div class="card">
+      <h3>Pizza Palazzo</h3>
+      <p>Cuisine: Italian</p>
+      <p>Rating: 4.3/5</p>
+      <p>Delivery: 25 minutes</p>
+    </div>
+
+    <div class="card">
+      <h3>Dragon Wok</h3>
+      <p>Cuisine: Chinese</p>
+      <p>Rating: 4.2/5</p>
+      <p>Delivery: 35 minutes</p>
+    </div>
+  </div>
+
+  <h2>Food Categories</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Starters</h3>
+      <p>Samosa, Paneer Tikka, Spring Rolls</p>
+    </div>
+
+    <div class="card">
+      <h3>Main Course</h3>
+      <p>Biryani, Butter Chicken, Pasta</p>
+    </div>
+
+    <div class="card">
+      <h3>Desserts</h3>
+      <p>Gulab Jamun, Ice Cream, Brownie</p>
+    </div>
+
+    <div class="card">
+      <h3>Beverages</h3>
+      <p>Cold Coffee, Masala Chai, Fresh Juice</p>
+    </div>
+  </div>
+
+  <h2>Menu Items and Prices</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Veg Biryani</h3>
+      <p class="price">₹220</p>
+      <p class="status">Available</p>
+      <button onclick="orderFood('Veg Biryani')">Order Now</button>
+    </div>
+
+    <div class="card">
+      <h3>Butter Chicken</h3>
+      <p class="price">₹280</p>
+      <p class="status">Available</p>
+      <button onclick="orderFood('Butter Chicken')">Order Now</button>
+    </div>
+
+    <div class="card">
+      <h3>Paneer Tikka</h3>
+      <p class="price">₹200</p>
+      <p class="status">Available</p>
+      <button onclick="orderFood('Paneer Tikka')">Order Now</button>
+    </div>
+
+    <div class="card">
+      <h3>Chocolate Brownie</h3>
+      <p class="price">₹120</p>
+      <p style="color:#b91c1c;font-weight:bold;">
+        Currently Unavailable
+      </p>
+      <button disabled>Unavailable</button>
+    </div>
+  </div>
+
+  <h2>Promotional Offers</h2>
+
+  <div class="promo">
+    <strong>FLAT50:</strong>
+    50% off your first order, up to ₹150.
+  </div>
+
+  <div class="promo">
+    <strong>FREEDEL:</strong>
+    Free delivery on orders above ₹300.
+  </div>
+
+  <div class="promo">
+    <strong>COMBO20:</strong>
+    20% off combo meals.
+  </div>
+
+  <h2>Order Status</h2>
+
+  <p id="message">
+    Select an available food item to place a demo order.
+  </p>
+
+  <footer>
+    <p>&copy; 2026 QuickBite Online Food Ordering Portal</p>
+  </footer>
+
+</div>
+
+<script>
+  function orderFood(item) {
+    document.getElementById("message").innerHTML =
+      "Demo order placed successfully for <strong>" +
+      item +
+      "</strong>!";
+  }
+</script>
+
+</body>
+</html>
