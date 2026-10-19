@@ -56,7 +56,7 @@ spec:
     spec:
       containers:
         - name: food-ordering
-          image: YOUR_DOCKERHUB_USERNAME/food-ordering:green
+          image: archanajawahar14/food-ordering:green
           ports:
             - containerPort: 80
 
